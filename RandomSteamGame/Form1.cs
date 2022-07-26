@@ -15,6 +15,7 @@ namespace RandomSteamGame
 {
     public partial class Form1 : Form
     {
+        Random rng;
         public Form1()
         {
             InitializeComponent();
@@ -22,12 +23,12 @@ namespace RandomSteamGame
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            Random rng = new Random();
         }
 
         private void ChooseRandomGame()
         {
-            Random rng = new Random();
+
             string chosen = GameLoader.gameDirectories.ElementAt(rng.Next(0, GameLoader.gameDirectories.Count));
             Process.Start(chosen);
         }
